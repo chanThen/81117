@@ -1,0 +1,31 @@
+<div id="div-alignment" class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<input type="text" id="search-text-control"  class="form-control" ng-model="searchtext" placeholder="Search for the books">
+				<span class="glyphicon glyphicon-search fa-4x"></span>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="productalignment" ng-repeat="products in products | filter:{categoryId:categoryid} | filter:searchtext ">
+				<div class="col-sm-3">
+					<div id="thumbnailalignment" class="thumbnail">
+						<div>
+							<img class="imageStyle" src={{products.imagePath}} alt="Lights">
+						</div>
+						<div class="caption">
+							<p>{{products.bookName}}</p>
+						</div>
+						<div id="button_alignment">
+							<button	ng-click="checkForSubscription(products.bookId)" class="btn btn-success">Subscribe</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
